@@ -8,10 +8,6 @@ import pages.RegistrationPage;
 
 public class SlFlightsTests {
 
-    // ==========================================
-    // 1. АВТОРИЗАЦИЯ
-    // ==========================================
-
     @Test
     public void successfulLoginAndLogout() {
         LoginPage loginPage = new LoginPage().open();
@@ -46,10 +42,6 @@ public class SlFlightsTests {
         loginPage.shouldHaveErrorMessage("Пользователь заблокирован");
     }
 
-    // ==========================================
-    // 2. ПОИСК И СОРТИРОВКА
-    // ==========================================
-
     @Test
     public void searchFlightAndSortByPrice() {
         new LoginPage().open().loginAs("standard_user", "stand_pass1");
@@ -61,10 +53,6 @@ public class SlFlightsTests {
         resultsPage.sortBy("price", "asc");
         resultsPage.shouldBeSortedByPriceAscending();
     }
-
-    // ==========================================
-    // 3. БРОНИРОВАНИЕ (РЕГИСТРАЦИЯ)
-    // ==========================================
 
     @Test
     public void checkRegistrationFormPrefilledData() {
